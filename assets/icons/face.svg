@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>face</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="face" transform="translate(-1254.000000, -31.000000)" filter="url(#filter-1)">
+            <g transform="translate(1255.000000, 32.000000)">
+                <g id="Oval">
+                    <circle cx="16.5" cy="16.5" r="16.5"></circle>
+                </g>
+                <path d="M17.32,26 L13.773,26 L13.773,17.5 L12,17.5 L12,14.57 L13.773,14.57 L13.773,12.811 C13.773,10.422 14.773,9 17.617,9 L19.984,9 L19.984,11.93 L18.5,11.93 C17.393,11.93 17.32,12.339 17.32,13.103 L17.32,14.569 L20,14.569 L19.686,17.5 L17.319,17.5 L17.319,26 L17.32,26 Z" id="Shape" fill="#151C2A" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

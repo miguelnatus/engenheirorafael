@@ -1,0 +1,564 @@
+@font-face {
+font-family: 'futura-medium';
+src: url('../fonts/futura-medium.woff') format('woff');
+font-weight: bold;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+font-family: 'futura-book';
+src: url('../fonts/futura-book-bt.woff') format('woff');
+font-weight: bold;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+font-family: 'futura-Bold';
+src: url('../fonts/futura-bold.woff') format('woff');
+font-weight: bold;
+font-style: normal;
+font-display: swap;
+}
+
+
+:root{
+--verde: #282d25;
+--marrom: #7A6453;
+}
+
+body{
+font-size: 0.95rem;
+}
+
+strong, b{
+font-family: 'futura-medium';
+}
+
+.fs-18{
+font-size: 18px;
+}
+
+.font-helve {
+font-family: helvetica;
+font-weight: 300;
+}
+
+.font-fut {
+font-family: 'futura-medium';
+}
+.font-book {
+font-family: 'futura-book';
+}
+
+a{
+text-decoration: none;
+color: #000;
+}
+
+a:hover{
+color: #000;
+}
+
+
+.navbar-dark .navbar-toggler, .navbar-light .navbar-toggler {
+box-shadow: none;
+outline: none;
+border: none;
+padding-right: 0;
+padding-left: 1rem;
+}
+
+.whatsForm{
+background-color: #F3EEE4!important;
+border-color: #EDE2CB;
+color: #000;
+font-family: 'Hind-Regular';
+outline: none!important;
+box-shadow: none!important;
+}
+.whatsForm::-webkit-input-placeholder { 
+font-family: 'Hind-Regular';
+color: #000;
+font-size: 14px;
+}
+
+.whatsForm:-ms-input-placeholder { 
+font-family: 'Hind-Regular';
+color: #000;
+font-size: 14px;
+}
+
+.whatsForm::placeholder {
+font-family: 'Hind-Regular';
+color: #000;
+font-size: 14px;
+}
+
+.bg-marrom{
+background-color: var(--marrom);
+}
+
+.navbar-light .nav-link, .navbar-dark .nav-link {
+position: relative;
+transition: all 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link {
+font-family: 'futura-book';
+color: #fff;
+text-transform: uppercase;
+margin: 0 18px 0 0;
+font-size: 17px;
+}
+
+.btn-color {
+background-color: var(--verde);
+color: #fff;
+padding: 0.375rem 1.2rem 0.275rem 1.2rem;
+font-family: 'futura-medium';
+border-radius: 2rem;
+}
+
+.btn-color:hover {
+opacity: 0.9;
+color: #fff;
+}
+.oval-verde{
+height: 37px;
+width: 37px;
+border-radius: 50%;
+background-color: var(--verde);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.oval-verde.footer{
+background-color: #DACEB6;
+}
+
+.navbar{
+padding-top: 1.25rem;
+padding-bottom: 1.25rem;
+}
+
+.logo2{
+position: absolute;
+right: -59px;
+bottom: -1.25rem;
+padding: .2rem .4rem;
+padding-top: .5rem;
+background-color: var(--verde);
+height: calc(100% + 1.25rem);
+border-top-left-radius: 25px;
+border-top-right-radius: 25px;
+text-align: center;
+}
+
+.box1{
+padding: 4rem 0;
+}
+
+.title1{
+font-family: 'futura-medium';
+text-transform: uppercase;
+color: var(--verde);
+font-size: 20px;
+line-height: 34px
+}
+
+.lineText{
+line-height: 30px;font-size: 16px;text-align: justify;margin-bottom: -1.5rem;
+font-family: 'futura-book';
+}
+
+.box2{
+padding-bottom: 4rem;
+}
+
+.h2title{
+font-size: 20px;
+color: var(--verde);
+font-family: 'futura-medium';
+text-transform: uppercase;
+position: relative;
+}
+
+.h2title:after{
+content: "";
+background-color: var(--verde);
+height: 1px;
+width: 60px;
+position: absolute;
+bottom: -5px;
+left: 0;
+right: 0;
+margin: auto;
+}
+
+.mb3r{
+margin-bottom: 3rem;
+}
+
+.h3title{
+font-size: 18px;
+color: var(--verde);
+font-family: 'futura-medium';
+text-transform: uppercase;
+}
+
+.desctitle{
+font-size: 16px;
+font-family: 'futura-book';
+margin-bottom: -.25rem
+}
+
+.btn-more{
+background-color: transparent;
+border-radius: 14px;
+font-family: 'futura-book';
+font-size: 13px;
+color: #000;
+border-color: #000;
+transition: all 0.2s;
+padding: .275rem .95rem;
+}
+
+.btn-more:hover{
+background-color: #000;
+color: #fff;
+}
+
+.br4{
+border-radius: 4px;
+}
+
+.box3{
+padding: 3.75rem 0;
+/*background-image: url('../../assets/atttachement.png');*/
+background-size: cover;
+background-position: center center;
+background-attachment: fixed;
+width: 100%;
+height: 100%;
+}
+
+.fontbg{
+font-size: 18px;
+color: #FFF;
+text-transform: uppercase;
+/*font-family: 'futura-medium';*/
+font-family: 'futura-Bold';
+}
+
+.btn-whats{
+background-color: #DACEB6;
+color: var(--verde);
+font-family: 'futura-medium';
+font-size: 15px;
+border-radius: 19px;
+padding: .375rem .95rem;
+}
+
+.btn-whats:hover{
+opacity: 0.9;
+color: var(--verde);
+}
+
+.box4{
+padding: 4rem 0;
+padding-bottom: 8.5rem;
+}
+
+.titleFooter{
+text-transform: uppercase;
+color: var(--verde);
+font-family: 'futura-medium';
+font-size: 22px;
+}
+
+.descFooter{
+font-family: 'futura-book';
+font-size: 18px;
+line-height: 30px;
+margin-bottom: -1rem;
+}
+
+.bg-green {
+background-color: var(--verde);
+}
+
+.effect-logo {
+position: absolute;
+top: -75px;
+text-align: center;
+width: 100%;
+left: 0;
+}
+
+.bg-green .effect-logo > div {
+background-color: var(--verde);
+}
+
+.effect-logo > div {
+padding: 15px;
+border-radius: 50%;
+height: 180px;
+width: 180px;
+margin: 0 auto;
+}
+
+.effect-logo > div > img{
+width: 100%;
+}
+
+.bg-green .linkfooter1, .bg-green .linkfooter2 {
+color: #fff;
+}
+
+.linkfooter1 {
+font-family: 'Futura-Medium';
+text-transform: uppercase;
+text-decoration: none;
+margin: 0 0 0 1.5rem;
+}
+
+.py-foot {
+padding-top: 4rem;
+padding-bottom: 2rem;
+}
+
+.py-f {
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+
+.bg-yellow{
+background-color: var(--marrom);
+}
+
+.linkfooter2 {
+color:#fff;
+}
+.linkfooter2:hover {
+color:#fff;
+}
+
+.linkfooter2 {
+font-family: 'Futura-Medium';
+text-transform: uppercase;
+text-decoration: none;
+margin: 0 0 0 2rem;
+}
+
+.posiButton{
+position: absolute;
+right: 0;
+bottom: 8px;
+margin: auto;
+}
+
+.imgButton{
+position: absolute;
+top: -38px;
+right: 0;
+}
+
+.lineNav{
+height: 4px;
+width: 100%;
+background-color: var(--verde);
+}
+
+.fsLook{
+font-family: 'futura-book';
+font-size: 16px;
+}
+
+.pagInternas{
+padding: 4rem 0;
+}
+
+.paddInternaBox > .box3{
+padding: 8rem 0;
+}
+
+.mt3r{
+margin-top: 4rem;
+}
+
+.boxGreenTitle{
+background-color: var(--verde);
+padding: 1.5rem 0;
+}
+
+.titleServices{
+font-size: 16px;
+font-family: 'Futura-book';
+color: #fff;
+}
+
+.form-control.formCont {
+    border: 1px solid #000;
+}
+
+.posiBtnmobile{
+position: fixed;
+right: .75rem;
+bottom: 25px;
+}
+.posiBtnmobile .btn-whats{
+box-shadow: 0px 0px 5px #fff;
+}
+
+/*MEDIAS*/
+
+/*MINIMOBILE*/
+@media (max-width: 364px){
+.h40{
+height: 45px;
+width: 228px;
+}
+}
+
+
+
+/*MOBILE*/
+@media (max-width: 767px){
+.box2{
+padding-bottom: 2rem;
+}
+.box4{
+padding: 2rem 0;
+padding-bottom: 6.5rem;
+}
+.pagInternas{
+padding: 2rem 0;
+}
+
+.paddInternaBox > .box3{
+padding: 2.5rem 0;
+padding-bottom: 7rem;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+.box2{
+padding-bottom: 3rem;
+}
+.box4{
+padding: 3rem 0;
+padding-bottom: 7.5rem;
+}
+.paddInternaBox > .box3{
+padding: 4rem 0;
+padding-bottom: 7rem;
+}
+}
+
+
+/*MOBILE MAX IPAD*/
+@media (max-width: 991px){
+.logo2{
+display: none;
+}
+.box1{
+padding: 2rem 0;
+}
+.title1{
+line-height: 25px;
+font-size: 16px;
+}
+.lineText{
+line-height: 28px;
+}
+.gy-lg-5x{
+--bs-gutter-y: 2rem;
+}
+.mb3r{
+margin-bottom: 2rem;
+}
+.h2title{
+font-size: 18px;
+}
+.h3title{
+font-size: 16px;
+}
+.linkfooter2 {
+margin-left: 0;
+}
+.espFoot1{
+margin-top: .75rem;
+}
+.titleFooter{
+font-size: 18px;
+text-align: center;
+}
+.descFooter {
+font-size: 16px;
+line-height: 26px;
+}
+.posiButton{
+display: none;
+}
+
+.mt3r{
+margin-top: 2rem;
+}
+}
+
+
+
+
+/*LG*/
+@media (min-width: 991px){
+.navbar-light .nav-link:hover.nav-link:after, .navbar-light .nav-link.active:after {
+content: "";
+position: absolute;
+bottom: 5px;
+height: 2px;
+width: 35px;
+background-color: var(--verde);
+left: 0;
+right: 0;
+margin: auto;
+transition: all 0.5s;
+}
+.gy-lg-5x{
+--bs-gutter-y: 3rem;
+}
+}
+
+
+
+/*LG MAX XL*/
+@media (min-width: 991px) and (max-width: 1199px){
+.navbar-light .navbar-nav .nav-item .nav-link{
+margin: 0 10px 0 0;
+}
+}
+
+
+
+/*XL*/
+@media (min-width: 1199px){
+/*.titleFooter{
+padding-right: 6rem;
+}*/
+}
+
+
+
+/*XL MAX XXL*/
+@media (min-width: 1199px) and (max-width: 1399px){
+
+}
+
+
+
+/*XXL*/
+@media (min-width: 1399px){
+
+}
