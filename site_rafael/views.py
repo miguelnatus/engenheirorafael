@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.conf import settings
 from django.http import HttpRequest, HttpResponse
-from .models import Servico, Portfolio, Contato
+from .models import Servico, Portfolio, Contato, Banner
 from django.core.mail import send_mail
 
-def home(request: HttpRequest):
-    servicos = Servico.objects.filter(ativo=True).order_by("ordem","id")[:12]
-    return render(request, "home.html", {"servicos": servicos})
+def home(request):
+    banners = Banner.objects.filter(ativo=True).order_by("id")
+    return render(request, "home.html", {"banners": banners})
 
 def servicos(request: HttpRequest):
     servicos = Servico.objects.filter(ativo=True).order_by("ordem","id")

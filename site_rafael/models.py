@@ -56,3 +56,20 @@ class Contato(models.Model):
     criado_em = models.DateTimeField(auto_now_add=True)
 
     def __str__(self): return f"{self.nome} - {self.assunto or 'contato'}"
+
+
+class Banner(models.Model):
+    titulo       = models.CharField("Título", max_length=200, blank=True)
+    ativo        = models.BooleanField("Ativo", default=True)
+    imagem       = models.ImageField("Imagem", upload_to="banners/")
+    criado_em    = models.DateTimeField("Criado em", auto_now_add=True)
+    atualizado_em = models.DateTimeField("Atualizado em", auto_now=True)
+
+    class Meta:
+        db_table = "tbl_banners_"
+        ordering = ["-id"]
+        verbose_name = "Banner"
+        verbose_name_plural = "Banners"
+
+    def __str__(self):
+        return self.titulo or f"Banner #{self.pk}"
