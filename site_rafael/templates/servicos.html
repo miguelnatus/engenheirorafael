@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Serviços{% endblock %}
+{% block content %}
+<h1>Serviços</h1>
+<ul>
+  {% for s in servicos %}
+    <li><a href="/atuacao/{{ s.id }}/{{ s.slug }}">{{ s.titulo }}</a></li>
+  {% empty %}
+    <li>Sem serviços.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
