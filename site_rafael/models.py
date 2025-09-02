@@ -73,3 +73,29 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.titulo or f"Banner #{self.pk}"
+    
+
+class Atuacao(models.Model):
+    p_titulo      = models.CharField("Título", max_length=200)
+    p_resumo      = models.CharField("Resumo", max_length=255, blank=True)
+    p_desc        = models.TextField("Descrição", blank=True)
+    imagem        = models.ImageField("Imagem", upload_to="atuacoes/", blank=True, null=True)  # 👈 novo
+    p_sit         = models.BooleanField("Ativo", default=True)
+    ordem         = models.IntegerField("Ordem", default=0, db_index=True)
+    slug          = models.SlugField("Slug", max_length=220, blank=True)
+    criado_em     = models.DateTimeField("Criado em", auto_now_add=True)
+    atualizado_em = models.DateTimeField("Atualizado em", auto_now=True)
+
+    class Meta:
+        db_table = "tbl_paginas_"
+        ordering = ["ordem", "id"]
+        verbose_name = "Atuação"
+        verbose_name_plural = "Atuações"
+
+    def save(self, *args, **kwargs):
+        if not self.slug and self.p_titulo:
+            self.slug = slugify(self.p_titulo)[:220]
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.p_titulo

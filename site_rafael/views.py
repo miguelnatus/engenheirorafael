@@ -1,21 +1,24 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.conf import settings
 from django.http import HttpRequest, HttpResponse
-from .models import Servico, Portfolio, Contato, Banner
+from .models import Servico, Atuacao, Contato, Banner
 from django.core.mail import send_mail
+from django.utils.text import slugify
 
 def home(request):
     banners = Banner.objects.filter(ativo=True).order_by("id")
-    return render(request, "home.html", {"banners": banners})
+    atuacoes = Atuacao.objects.filter(p_sit=True).order_by("ordem", "id")
+    return render(request, "home.html", {"banners": banners, "atuacoes": atuacoes})
 
 def servicos(request: HttpRequest):
     servicos = Servico.objects.filter(ativo=True).order_by("ordem","id")
     return render(request, "servicos.html", {"servicos": servicos})
 
-def atuacao(request: HttpRequest, id: int, slug: str):
-    # no ASP usava id e slug; aqui aceitamos ambos
-    svc = get_object_or_404(Servico, id=id)
-    return render(request, "servico_detalhe.html", {"servico": svc})
+
+def atuacao(request, id, slug):
+    atuacao = get_object_or_404(Atuacao, pk=id, p_sit=True)
+   
+    return render(request, "atuacao_detalhe.html", {"atuacao": atuacao})
 
 def contato(request: HttpRequest):
     return render(request, "contato.html")
