@@ -1,0 +1,29 @@
+<table width="100%" style="padding:10px;background-color:#282d25;">
+  <tr>
+    <td>
+      <center>
+        <img src="{{ logo_url }}" height="55" alt="Logo">
+      </center>
+
+      <table width="100%" style="background:#fff;margin-top:10px;margin-bottom:20px;padding:30px;">
+        <tr>
+          <td style="text-align:center;">
+            <h2 style="padding-top:20px;margin:0;font-weight:600;">
+              Um novo contato está querendo falar com você:
+            </h2>
+            <p style="margin-top:20px;">
+              <b>Nome:</b> {{ nome }}<br>
+              {% if celular %}<b>Celular:</b> {{ celular }}<br>{% endif %}
+              {% if email %}<b>E-mail:</b> {{ email }}<br>{% endif %}
+              <b>Cidade:</b> {{ cidade }}<br>
+              <b>Mensagem:</b> {{ mensagem|linebreaksbr }}<br>
+            </p>
+            <p style="margin-top:30px;margin-bottom:0;color:#ccc;font-size:14px">
+              Esta é uma mensagem automática.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

@@ -1,14 +1,97 @@
 {% extends "base.html" %}
 {% block title %}Contato{% endblock %}
 {% block content %}
-<h1>Contato</h1>
-<form method="post" action="/send">
-  {% csrf_token %}
-  <input name="nome" placeholder="Seu nome" required><br>
-  <input name="email" type="email" placeholder="Seu e-mail" required><br>
-  <input name="telefone" placeholder="Telefone"><br>
-  <input name="assunto" placeholder="Assunto"><br>
-  <textarea name="mensagem" placeholder="Mensagem" required></textarea><br>
-  <button type="submit">Enviar</button>
-</form>
+
+<div class="boxGreenTitle">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="titleServices">CONTATO</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagInternas">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+
+        {% if messages %}
+          {% for m in messages %}
+            <div class="alert alert-{{ m.tags }}">{{ m }}</div>
+          {% endfor %}
+        {% endif %}
+
+        <form class="row" action="{% url 'send_contato' %}" method="post" id="formContato" novalidate>
+          {% csrf_token %}
+          <div class="col-md-6 pe-lg-0">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control formCont" id="nomeCompleto" name="nomeCompleto" placeholder="Nome completo" required>
+              <label for="nomeCompleto">Nome Completo</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input type="tel" class="form-control formCont" id="celular" name="celular" placeholder="Celular" maxlength="15">
+              <label for="celular">Celular</label>
+            </div>
+          </div>
+          <div class="col-md-6 pe-lg-0">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control formCont" id="email" name="email" placeholder="E-mail" required>
+              <label for="email">E-mail</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control formCont" id="cidade" name="cidade" placeholder="Cidade" required>
+              <label for="cidade">Cidade</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-floating mb-3">
+              <textarea class="form-control formCont" id="mensagem" name="mensagem" placeholder="Mensagem" style="height: 150px;" required></textarea>
+              <label for="mensagem">Mensagem</label>
+            </div>
+          </div>
+          <div class="col-12 mb-2">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="politica" required>
+              <label class="form-check-label" for="politica">
+                <a role="button" data-bs-toggle="modal" data-bs-target="#modalPoli">
+                  <u class="modalPolitica">Li e concordo com a Política de Privacidade</u>
+                </a>
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-dark w-100">ENVIAR FORMULÁRIO</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Política -->
+<div class="modal fade" id="modalPoli" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title font-fut text-uppercase" id="exampleModalLabel">POLÍTICA DE PRIVACIDADE</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body font-book">
+        {{ g_politica|default:"<p>Texto da política de privacidade...</p>"|safe }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-color btn" data-bs-dismiss="modal">Aceito</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
 {% endblock %}

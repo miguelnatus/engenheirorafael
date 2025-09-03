@@ -100,7 +100,7 @@
     </div>
   </div>
 </div>
-<!--#include file="includes/boxHome.asp"-->
+
 
 <div class="box4">
   <div class="container">
@@ -118,44 +118,41 @@ Sua indústria necessita de um profissional capacitado? Entre em contato. Vamos 
               <!-- / -->
               <div class="col-6">
                 <div class="row gy-3">
-                    <%
-                      SET rsImg 		= CONEXAO.EXECUTE("SELECT * FROM tbl_anexos_ WHERE codId='"&rs("id")&"' AND modulo='paginas' ORDER BY ordem ASC limit 2;")
-                      IF NOT rsImg.EOF THEN
-                      DO WHILE not rsImg.EOF
-                      imagem 			= caminhoTemporario&"paginas/"&rs("id")&"/"&rsImg("arquivo")
-                      %>
+
                     <div class="col-12 small-demo">
-                      <a href="<%=imagem%>"><img src="<%=imagem%>" class="w-100 br4" alt='img'></a>
+                      <a href="/media/servico1.jpeg"><img src="/media/servico1.jpeg"" class="w-100 br4" alt='img'></a>
                     </div>
-                    <%
-                      rsImg.MOVENEXT
-                      LOOP
-                      END IF
-                      SET rsImg 		= NOTHING
-                      %>
+                    
                 </div>
               </div>
               <!-- / -->
               <div class="col-6">
                 <div class="row gy-3">
-                    <%
-                      SET rsImg 		= CONEXAO.EXECUTE("SELECT * FROM tbl_anexos_ WHERE codId='"&rs("id")&"' AND modulo='paginas' ORDER BY ordem ASC limit 2,4;")
-                      IF NOT rsImg.EOF THEN
-                      DO WHILE not rsImg.EOF
-                      imagem 			= caminhoTemporario&"paginas/"&rs("id")&"/"&rsImg("arquivo")
-                      %>
+
                     <div class="col-12 small-demo">
-                      <a href="<%=imagem%>"><img src="<%=imagem%>" class="w-100 br4" alt='img'></a>
+                      <a href="/media/servico2.jpeg"><img src="/media/servico2.jpeg"" class="w-100 br4" alt='img'></a>
                     </div>
-                    <%
-                      rsImg.MOVENEXT
-                      LOOP
-                      END IF
-                      SET rsImg 		= NOTHING
-                      %>
                 </div>
               </div>
               <!-- / -->
+
+              <div class="col-6">
+                <div class="row gy-3">
+
+                    <div class="col-12 small-demo">
+                      <a href="/media/servico3.jpeg"><img src="/media/servico3.jpeg"" class="w-100 br4" alt='img'></a>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="row gy-3">
+
+                    <div class="col-12 small-demo">
+                      <a href="/media/servico4.jpeg"><img src="/media/servico4.jpeg"" class="w-100 br4" alt='img'></a>
+                    </div>
+                </div>
+              </div>
           </div>
         </div>
     </div>

@@ -127,3 +127,12 @@ JAZZMIN_UI_TWEAKS = {
         'success': 'btn-success'
     }
 }
+
+EMAIL_BACKEND   = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST      = "smtp.seudominio.com"
+EMAIL_PORT      = 587
+EMAIL_HOST_USER = "contato@seudominio.com"
+EMAIL_HOST_PASSWORD = "SUA_SENHA"
+EMAIL_USE_TLS   = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+CONTACT_EMAIL_TO = "contato@seudominio.com"

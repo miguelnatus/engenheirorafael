@@ -19,9 +19,11 @@ class PortfolioAdmin(admin.ModelAdmin):
 
 @admin.register(Contato)
 class ContatoAdmin(admin.ModelAdmin):
-    list_display = ("nome","email","telefone","lido","criado_em")
-    list_filter = ("lido",)
-    search_fields = ("nome","email","assunto","mensagem")
+    list_display    = ["c_nome", "c_email", "c_telefone", "c_cidade", "c_dc"]
+    search_fields   = ["c_nome", "c_email", "c_cidade", "c_mensagem"]
+    list_filter     = []  # não há 'lido' no model
+    ordering        = ["-id"]
+    date_hierarchy  = "c_dc"
 
 
 @admin.register(Banner)

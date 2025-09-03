@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.utils import timezone
 
 class SiteConfig(models.Model):
     chave = models.CharField(max_length=60, primary_key=True)
@@ -45,17 +46,17 @@ class Portfolio(models.Model):
     def __str__(self): return self.titulo
 
 class Contato(models.Model):
-    nome = models.CharField(max_length=160)
-    email = models.EmailField()
-    telefone = models.CharField(max_length=40, blank=True)
-    assunto = models.CharField(max_length=200, blank=True)
-    mensagem = models.TextField()
-    ip = models.GenericIPAddressField(null=True, blank=True)
-    user_agent = models.CharField(max_length=255, blank=True)
-    lido = models.BooleanField(default=False)
-    criado_em = models.DateTimeField(auto_now_add=True)
+    c_dc       = models.DateTimeField("Data", auto_now_add=True)
+    c_nome     = models.CharField("Nome", max_length=160)
+    c_telefone = models.CharField("Telefone", max_length=40, blank=True)
+    c_email    = models.EmailField("E-mail", blank=True)
+    c_cidade   = models.CharField("Cidade", max_length=120, default="", blank=True)
+    c_mensagem = models.TextField("Mensagem")
+    c_origem   = models.CharField("Origem", max_length=10, default="2")
 
-    def __str__(self): return f"{self.nome} - {self.assunto or 'contato'}"
+    class Meta:
+        db_table = "tbl_contatos_"
+        ordering = ["-id"]
 
 
 class Banner(models.Model):

@@ -12,5 +12,5 @@ urlpatterns = [
     path("servicos", views.servicos, name="servicos"),
     re_path(r"^atuacao/(?P<id>\d+)/(?P<slug>[_0-9a-z-]+)$", views.atuacao, name="atuacao"),
     path("contato", views.contato, name="contato"),
-    path("send", views.send_contato, name="send"),
+    path("send", views.contato, name="send_contato"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

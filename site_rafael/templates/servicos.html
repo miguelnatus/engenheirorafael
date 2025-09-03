@@ -1,12 +1,40 @@
 {% extends "base.html" %}
 {% block title %}Serviços{% endblock %}
 {% block content %}
-<h1>Serviços</h1>
-<ul>
-  {% for s in servicos %}
-    <li><a href="/atuacao/{{ s.id }}/{{ s.slug }}">{{ s.titulo }}</a></li>
-  {% empty %}
-    <li>Sem serviços.</li>
-  {% endfor %}
-</ul>
+<div class="container d-md-none">
+  <hr class="mt-0" style="margin-bottom: 2rem;">
+</div>
+<div class="box2">
+  <div class="container">
+    <div class="row mb3r">
+        <div class="col-lg-12 text-center">
+          <h2 class="h2title">ÁREAS DE ATUAÇÃO</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 gy-4">
+      {% for a in atuacoes %}
+        <div class="col text-center text-md-start">
+          {% if a.imagem %}
+            <a href="{% url 'atuacao' a.id a.slug %}">
+              <img src="{{ a.imagem.url }}" alt="{{ a.p_titulo }}" loading="lazy" class="br4 w-100">
+            </a>
+          {% endif %}
+          <h3 class="mt-3 mb-0 h3title">{{ a.p_titulo }}</h3>
+          {% if a.p_resumo %}
+            <div class="mt-2 desctitle">
+              <p>{{ a.p_resumo }}</p>
+            </div>
+          {% endif %}
+          <div>
+            <a href="{% url 'atuacao' a.id a.slug %}" class="btn btn-more">VER MAIS</a>
+          </div>
+        </div>
+      {% empty %}
+        <div class="col">
+          <p class="text-muted">Nenhuma atuação cadastrada.</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}
